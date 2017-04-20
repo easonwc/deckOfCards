@@ -8,7 +8,59 @@ import java.util.Set;
  * @author wceii
  */
 public enum CardType {
-    ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING;
+
+    /**
+     * The Ace card type.
+     */
+    ACE,
+    /**
+     * The Two card type.
+     */
+    TWO,
+    /**
+     * The Three card type.
+     */
+    THREE,
+    /**
+     * The Four card type.
+     */
+    FOUR,
+    /**
+     * The Five card type.
+     */
+    FIVE,
+    /**
+     * The Six card type.
+     */
+    SIX,
+    /**
+     * The Seven card type.
+     */
+    SEVEN,
+    /**
+     * The Eight card type.
+     */
+    EIGHT,
+    /**
+     * The Nine card type.
+     */
+    NINE,
+    /**
+     * The Ten card type.
+     */
+    TEN,
+    /**
+     * The Jack card type.
+     */
+    JACK,
+    /**
+     * The Queen card type.
+     */
+    QUEEN,
+    /**
+     * The King card type.
+     */
+    KING;
 
     @Override
     public String toString() {
@@ -44,7 +96,13 @@ public enum CardType {
         }
     }
 
-    public Set<Integer> getValues() {
+    /**
+     * This method will get a set of numeric values for a card type.
+     *
+     * @return The set of integer values. Currently the only card type that
+     * returns multiple values is the Ace.
+     */
+    public final Set<Integer> getValues() {
 
         final Set<Integer> values = new HashSet<>();
 

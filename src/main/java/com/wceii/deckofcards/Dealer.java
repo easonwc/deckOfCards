@@ -28,7 +28,7 @@ public class Dealer {
      *
      * @return A list of cards.
      */
-    public List<Card> createSingleDeck() {
+    public final List<Card> createSingleDeck() {
         final List<Card> deckOfCards = new ArrayList<>();
         for (Suit tmpSuit : Suit.values()) {
             for (CardType tmpType : CardType.values()) {
@@ -45,7 +45,7 @@ public class Dealer {
      *
      * @param cardsToShuffle The list of cards to shuffle.
      */
-    public void shuffleDeck(final List<Card> cardsToShuffle) {
+    public final void shuffleDeck(final List<Card> cardsToShuffle) {
         final int numTimes = random.nextInt(1000);
         for (int i = 0; i < numTimes; i++) {
             final int pos1 = random.nextInt(cardsToShuffle.size());
@@ -64,10 +64,10 @@ public class Dealer {
      *
      * @param deckOfCards The list of cards to choose a card from.
      *
-     * @return The card dealt.  The original list of cards will no longer
-     * contain the dealt card.
+     * @return The card dealt. The original list of cards will no longer contain
+     * the dealt card.
      */
-    public Card dealOneCard(final List<Card> deckOfCards) {
+    public final Card dealOneCard(final List<Card> deckOfCards) {
         if (deckOfCards != null && !deckOfCards.isEmpty()) {
             return dealOneRandomCard(deckOfCards);
         } else {
@@ -75,7 +75,15 @@ public class Dealer {
         }
     }
 
-    public Card dealOneRandomCard(final List<Card> deckOfCards) {
+    /**
+     * This method deals one random card from the deck of cards.
+     *
+     * @param deckOfCards The list of cards to choose a card from.
+     *
+     * @return The card dealt. The original list of cards will no longer contain
+     * the dealt card.
+     */
+    public final Card dealOneRandomCard(final List<Card> deckOfCards) {
         if (deckOfCards != null && !deckOfCards.isEmpty()) {
             final int pos = random.nextInt(deckOfCards.size());
             final Card cardRemoved = deckOfCards.remove(pos);
@@ -85,7 +93,15 @@ public class Dealer {
         }
     }
 
-    public Card dealTopCard(final List<Card> deckOfCards) {
+    /**
+     * This method deals the top card from the deck of cards.
+     *
+     * @param deckOfCards The list of cards to choose a card from.
+     *
+     * @return The card dealt. The original list of cards will no longer contain
+     * the dealt card.
+     */
+    public final Card dealTopCard(final List<Card> deckOfCards) {
         if (deckOfCards != null && !deckOfCards.isEmpty()) {
             final Card cardRemoved = deckOfCards.remove(0);
             return cardRemoved;
@@ -94,7 +110,15 @@ public class Dealer {
         }
     }
 
-    public Card dealBottomCard(final List<Card> deckOfCards) {
+    /**
+     * This method deals the bottom card from the deck of cards.
+     *
+     * @param deckOfCards The list of cards to choose a card from.
+     *
+     * @return The card dealt. The original list of cards will no longer contain
+     * the dealt card.
+     */
+    public final Card dealBottomCard(final List<Card> deckOfCards) {
         if (deckOfCards != null && !deckOfCards.isEmpty()) {
             final Card cardRemoved = deckOfCards.remove(deckOfCards.size() - 1);
             return cardRemoved;

@@ -5,7 +5,23 @@ package com.wceii.deckofcards.enums;
  * @author wceii
  */
 public enum Suit {
-    HEARTS, SPADES, CLUBS, DIAMONDS;
+
+    /**
+     * The suit of Hearts
+     */
+    HEARTS,
+    /**
+     * The suit of Spades
+     */
+    SPADES,
+    /**
+     * The suit of Clubs
+     */
+    CLUBS,
+    /**
+     * The suit of Diamonds
+     */
+    DIAMONDS;
 
     @Override
     public String toString() {

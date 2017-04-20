@@ -7,19 +7,19 @@ package com.wceii.deckofcards.enums;
 public enum Suit {
 
     /**
-     * The suit of Hearts
+     * The suit of Hearts.
      */
     HEARTS,
     /**
-     * The suit of Spades
+     * The suit of Spades.
      */
     SPADES,
     /**
-     * The suit of Clubs
+     * The suit of Clubs.
      */
     CLUBS,
     /**
-     * The suit of Diamonds
+     * The suit of Diamonds.
      */
     DIAMONDS;
 

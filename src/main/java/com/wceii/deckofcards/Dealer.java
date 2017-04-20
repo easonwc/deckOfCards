@@ -33,8 +33,8 @@ public class Dealer {
     public void shuffleDeck(final List<Card> cardsToShuffle) {
         final int numTimes = random.nextInt(1000);
         for (int i = 0; i < numTimes; i++) {
-            final int pos1 = random.nextInt(52);
-            final int pos2 = random.nextInt(52);
+            final int pos1 = random.nextInt(cardsToShuffle.size());
+            final int pos2 = random.nextInt(cardsToShuffle.size());
             if (pos1 != pos2) {
                 //swap cards
                 final Card card1 = cardsToShuffle.get(pos1);
@@ -43,8 +43,40 @@ public class Dealer {
             }
         }
     }
-    
-    public Card dealOneCard(final List<Card> cardsToShuffle) {
-        return null;
+
+    public Card dealOneCard(final List<Card> deckOfCards) {
+        if (deckOfCards != null && !deckOfCards.isEmpty()) {
+            return dealOneRandomCard(deckOfCards);
+        } else {
+            return null;
+        }
+    }
+
+    public Card dealOneRandomCard(final List<Card> deckOfCards) {
+        if (deckOfCards != null && !deckOfCards.isEmpty()) {
+            final int pos = random.nextInt(deckOfCards.size());
+            final Card cardRemoved = deckOfCards.remove(pos);
+            return cardRemoved;
+        } else {
+            return null;
+        }
+    }
+
+    public Card dealTopCard(final List<Card> deckOfCards) {
+        if (deckOfCards != null && !deckOfCards.isEmpty()) {
+            final Card cardRemoved = deckOfCards.remove(0);
+            return cardRemoved;
+        } else {
+            return null;
+        }
+    }
+
+    public Card dealBottomCard(final List<Card> deckOfCards) {
+        if (deckOfCards != null && !deckOfCards.isEmpty()) {
+            final Card cardRemoved = deckOfCards.remove(deckOfCards.size() - 1);
+            return cardRemoved;
+        } else {
+            return null;
+        }
     }
 }

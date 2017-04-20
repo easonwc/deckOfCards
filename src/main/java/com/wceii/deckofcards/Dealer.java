@@ -12,12 +12,22 @@ import java.util.Random;
  */
 public class Dealer {
 
+    /**
+     * Internal random number generator.
+     */
     private final Random random = new Random();
 
+    /**
+     * Empty constructor.
+     */
     public Dealer() {
-
     }
 
+    /**
+     * This method creates a single deck of 52 cards.
+     *
+     * @return A list of cards.
+     */
     public List<Card> createSingleDeck() {
         final List<Card> deckOfCards = new ArrayList<>();
         for (Suit tmpSuit : Suit.values()) {
@@ -30,6 +40,11 @@ public class Dealer {
         return deckOfCards;
     }
 
+    /**
+     * This method shuffles a list of cards.
+     *
+     * @param cardsToShuffle The list of cards to shuffle.
+     */
     public void shuffleDeck(final List<Card> cardsToShuffle) {
         final int numTimes = random.nextInt(1000);
         for (int i = 0; i < numTimes; i++) {
@@ -44,6 +59,14 @@ public class Dealer {
         }
     }
 
+    /**
+     * This method deals one card from the deck of cards.
+     *
+     * @param deckOfCards The list of cards to choose a card from.
+     *
+     * @return The card dealt.  The original list of cards will no longer
+     * contain the dealt card.
+     */
     public Card dealOneCard(final List<Card> deckOfCards) {
         if (deckOfCards != null && !deckOfCards.isEmpty()) {
             return dealOneRandomCard(deckOfCards);

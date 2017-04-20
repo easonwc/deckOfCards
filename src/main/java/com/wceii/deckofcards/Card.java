@@ -10,37 +10,67 @@ import java.util.Objects;
  */
 public class Card {
 
+    /**
+     * The card type.
+     */
     private final CardType type;
+    /**
+     * The card suit.
+     */
     private final Suit suit;
+    /**
+     * Hash value.
+     */
+    private static final int HASH1 = 7;
+    /**
+     * Hash value.
+     */
+    private static final int HASH2 = 67;
 
+    /**
+     * Constructor.
+     *
+     * @param cType The card type enumeration value.
+     * @param cSuit The card suit enumeration value.
+     */
     public Card(final CardType cType, final Suit cSuit) {
         type = cType;
         suit = cSuit;
     }
 
-    public CardType getType() {
+    /**
+     * Getter for the card type.
+     *
+     * @return The card type as an enumeration value.
+     */
+    public final CardType getType() {
         return type;
     }
 
-    public Suit getSuit() {
+    /**
+     * Getter for the card suit.
+     *
+     * @return The suit as an enumeration value.
+     */
+    public final Suit getSuit() {
         return suit;
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return type + " of " + suit;
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.type);
-        hash = 67 * hash + Objects.hashCode(this.suit);
+    public final int hashCode() {
+        int hash = HASH1;
+        hash = HASH2 * hash + Objects.hashCode(this.type);
+        hash = HASH2 * hash + Objects.hashCode(this.suit);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(final Object obj) {
         if (this == obj) {
             return true;
         }
@@ -54,9 +84,6 @@ public class Card {
         if (this.type != other.type) {
             return false;
         }
-        if (this.suit != other.suit) {
-            return false;
-        }
-        return true;
+        return this.suit == other.suit;
     }
 }
